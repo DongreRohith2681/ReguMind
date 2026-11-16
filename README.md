@@ -1,6 +1,6 @@
-# TOC Studio
+# ReguMind
 
-TOC Studio is a FastAPI and React/Vite application for experimenting with finite automata and regular-language classification. The backend currently supports automaton simulation and transformations, random labeled-word generation, classifier evaluation, and two automaton-construction endpoints. The frontend provides a browser workspace shell with navigation for these activities; its workspace actions are currently presentational and are not yet wired to the API.
+ReguMind is a FastAPI and React/Vite application for experimenting with finite automata and regular-language classification. The backend currently supports automaton simulation and transformations, random labeled-word generation, classifier evaluation, and two automaton-construction endpoints. The frontend provides a browser workspace shell with navigation for these activities; its workspace actions are currently presentational and are not yet wired to the API.
 
 ## Current status
 

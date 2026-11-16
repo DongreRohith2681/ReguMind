@@ -37,7 +37,10 @@ def mini(a: Automaton): return minimize(a)
 @router.post('/dataset')
 def dataset(r: DatasetRequest):
     words, labels = balanced_generate(r.automaton, r.n_samples, r.max_length, r.seed)
-    return {'words': words, 'labels': labels, 'positive_count': sum(labels), 'negative_count': len(labels) - sum(labels)}
+    verified_labels = [int(accepts(r.automaton, word)) for word in words]
+    if verified_labels != labels:
+        labels = verified_labels
+    return {'words': words, 'labels': labels, 'positive_count': sum(labels), 'negative_count': len(labels) - sum(labels), 'automaton': r.automaton.model_dump(mode='json')}
 
 @router.post('/train')
 def train(r: TrainRequest):
